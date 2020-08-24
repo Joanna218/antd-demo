@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+// import { Button } from 'antd';
 import './App.css';
+import UcSelect from './ucComponent/UcSelect';
+
+const selectData = [
+  { text: "aaa", value: "111" },
+  { text: "bbb", value: "222" },
+  { text: "ccc", value: "333"},
+];
+const selectDefaultValue = { text: "ccc", value: "333" };
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Button type="primary">Button</Button> */}
+      <UcSelect ucData={selectData} ucDefaultValue={selectDefaultValue} ucPlaceholder={"請選擇..."}/>
     </div>
   );
 }
