@@ -1,3 +1,15 @@
+/**
+ * Select 下拉選單 單選、複選
+ */
+
+ /**
+  * props 屬性
+  * ucData: 資料來源
+  * ucDefaultValue: 預設帶上的資料
+  * ucPlaceholder:　提示字
+  * ucReadOnly: 是否唯獨
+  * ucIsMultiselect: 是否單選
+  */
 import React, { Component } from 'react';
 import { Select } from 'antd';
 
@@ -19,7 +31,9 @@ class UcSelect extends Component {
     return (
       <Select placeholder={this.props.ucPlaceholder} style={{ width: 120 }}
         value={props.ucDefaultValue.value}
-        onChange={this.handleChange}>
+        disabled={props.ucReadOnly}
+        onChange={this.handleChange}
+        mode={'multiple'}>
         {options}
      </Select>
     );
